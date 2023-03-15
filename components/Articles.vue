@@ -13,7 +13,7 @@
           <nuxt-img
             v-if="article.attributes.cover.data"
             height="200"
-            :src="config.apiBaseUrl + article.attributes.cover.data.attributes.formats.large.url"
+            :src="config.apiBaseUrl + article.attributes?.cover?.data?.attributes?.url"
             cover
           />
           <v-card-subtitle v-if="article.attributes.Category" class="pt-2"><v-chip :color="article.attributes.Category.data.attributes.color">{{ article.attributes.Category.data.attributes.name }}</v-chip></v-card-subtitle>
@@ -64,6 +64,7 @@ interface Cover{
       name: string,
       alternativeText: string,
       caption: string,
+      url: string,
       formats: {
         thumbnail: {
           url: string
