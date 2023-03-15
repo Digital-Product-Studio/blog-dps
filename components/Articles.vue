@@ -10,7 +10,7 @@
           elevation="3"
           :to="'articles/' + article.id"
         >
-          <v-img
+          <nuxt-img
             v-if="article.attributes.cover.data"
             height="200"
             :src="config.apiBaseUrl + article.attributes.cover.data.attributes.formats.large.url"
